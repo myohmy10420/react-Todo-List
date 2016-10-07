@@ -19036,7 +19036,10 @@ var TodoApp = exports.TodoApp = function (_Component) {
   function TodoApp(props, context) {
     _classCallCheck(this, TodoApp);
 
-    return _possibleConstructorReturn(this, (TodoApp.__proto__ || Object.getPrototypeOf(TodoApp)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (TodoApp.__proto__ || Object.getPrototypeOf(TodoApp)).call(this, props, context));
+
+    _this._handleClick = _this._handleClick.bind(_this);
+    return _this;
   }
 
   _createClass(TodoApp, [{
@@ -19046,9 +19049,14 @@ var TodoApp = exports.TodoApp = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {}
   }, {
+    key: '_handleClick',
+    value: function _handleClick() {
+      console.log('here');
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement("div", null, _react2.default.createElement(_TodoList.TodoList, null), _react2.default.createElement("input", { value: "" }), _react2.default.createElement("button", null, "Add"));
+      return _react2.default.createElement("div", null, _react2.default.createElement(_TodoList.TodoList, null), _react2.default.createElement("input", { value: "" }), _react2.default.createElement("button", { onClick: this._handleClick }, "Add"));
     }
   }]);
 
