@@ -14,6 +14,7 @@ export class TodoList extends Component {
   render () {
     return (
       <div>
+        <p>{this.props.item}</p>
       </div>
     )
   }

@@ -19069,7 +19069,7 @@ var TodoApp = exports.TodoApp = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement("div", null, _react2.default.createElement(_TodoList.TodoList, null), _react2.default.createElement("input", { onChange: this._handleChange, value: this.state.text }), _react2.default.createElement("button", { onClick: this._handleClick }, "Add"));
+      return _react2.default.createElement("div", null, _react2.default.createElement(_TodoList.TodoList, { item: this.state.text }), _react2.default.createElement("input", { onChange: this._handleChange, value: this.state.text }), _react2.default.createElement("button", { onClick: this._handleClick }, "Add"));
     }
   }]);
 
@@ -19119,7 +19119,7 @@ var TodoList = exports.TodoList = function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react2.default.createElement("div", null);
+      return _react2.default.createElement("div", null, _react2.default.createElement("p", null, this.props.item));
     }
   }]);
 

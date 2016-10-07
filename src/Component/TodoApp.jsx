@@ -34,7 +34,7 @@ export class TodoApp extends Component {
   render() {
     return (
       <div>
-        <TodoList />
+        <TodoList item={this.state.text} />
         <input onChange={this._handleChange} value={this.state.text} />
         <button onClick={this._handleClick}>Add</button>
       </div>
