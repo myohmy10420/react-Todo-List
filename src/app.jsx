@@ -1,3 +1,6 @@
+import React from "react";
+import { render } from "react-dom";
+
 var Title = React.createClass({
   render: function () {
     return (
@@ -9,7 +12,7 @@ var Title = React.createClass({
   }
 });
 
-ReactDOM.render(
+render(
   <Title text="Hello props!" />,
   document.getElementById('content')
 );
