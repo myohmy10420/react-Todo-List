@@ -19040,12 +19040,17 @@ var Title = exports.Title = function (_Component) {
   _createClass(Title, [{
     key: "render",
     value: function render() {
-      return _react2.default.createElement("div", null, _react2.default.createElement("h1", null, this.props.text), _react2.default.createElement("h2", null, "Author"));
+      return _react2.default.createElement("div", null, _react2.default.createElement("h1", null, this.props.text, " by ", this.props.author), _react2.default.createElement("h2", null, "Author"));
     }
   }]);
 
   return Title;
 }(_react.Component);
+
+Title.defaultProps = {
+  text: 'Hello',
+  author: 'React'
+};
 //# sourceMappingURL=Title.js.map
 
 },{"react":158}],160:[function(require,module,exports){
