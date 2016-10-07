@@ -21,6 +21,9 @@ export class TodoApp extends Component {
 
   _handleChange(e) {
     console.log('onchanged:' + e.target.value)
+    this.setState({
+      text: e.target.value
+    })
   }
 
   _handleClick() {
@@ -32,7 +35,7 @@ export class TodoApp extends Component {
     return (
       <div>
         <TodoList />
-        <input onChange={this._handleChange} value='' />
+        <input onChange={this._handleChange} value={this.state.text} />
         <button onClick={this._handleClick}>Add</button>
       </div>
     );

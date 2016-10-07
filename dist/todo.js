@@ -19057,6 +19057,9 @@ var TodoApp = exports.TodoApp = function (_Component) {
     key: '_handleChange',
     value: function _handleChange(e) {
       console.log('onchanged:' + e.target.value);
+      this.setState({
+        text: e.target.value
+      });
     }
   }, {
     key: '_handleClick',
@@ -19066,7 +19069,7 @@ var TodoApp = exports.TodoApp = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement("div", null, _react2.default.createElement(_TodoList.TodoList, null), _react2.default.createElement("input", { onChange: this._handleChange, value: "" }), _react2.default.createElement("button", { onClick: this._handleClick }, "Add"));
+      return _react2.default.createElement("div", null, _react2.default.createElement(_TodoList.TodoList, null), _react2.default.createElement("input", { onChange: this._handleChange, value: this.state.text }), _react2.default.createElement("button", { onClick: this._handleClick }, "Add"));
     }
   }]);
 
