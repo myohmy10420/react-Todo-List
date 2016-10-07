@@ -29,6 +29,10 @@ var TodoApp = exports.TodoApp = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (TodoApp.__proto__ || Object.getPrototypeOf(TodoApp)).call(this, props, context));
 
+    _this.state = {
+      text: ''
+    };
+
     _this._handleClick = _this._handleClick.bind(_this);
     _this._handleChange = _this._handleChange.bind(_this);
     return _this;

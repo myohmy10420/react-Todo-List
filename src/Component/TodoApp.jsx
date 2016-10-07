@@ -5,6 +5,10 @@ export class TodoApp extends Component {
   constructor(props, context) {
     super(props, context);
 
+    this.state = {
+      text: ''
+    }
+
     this._handleClick = this._handleClick.bind(this);
     this._handleChange = this._handleChange.bind(this);
   }
