@@ -30,6 +30,7 @@ var TodoApp = exports.TodoApp = function (_Component) {
     var _this = _possibleConstructorReturn(this, (TodoApp.__proto__ || Object.getPrototypeOf(TodoApp)).call(this, props, context));
 
     _this._handleClick = _this._handleClick.bind(_this);
+    _this._handleChange = _this._handleChange.bind(_this);
     return _this;
   }
 
@@ -40,6 +41,11 @@ var TodoApp = exports.TodoApp = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {}
   }, {
+    key: '_handleChange',
+    value: function _handleChange(e) {
+      console.log('onchanged:' + e.target.value);
+    }
+  }, {
     key: '_handleClick',
     value: function _handleClick() {
       console.log('here');
@@ -47,7 +53,7 @@ var TodoApp = exports.TodoApp = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement("div", null, _react2.default.createElement(_TodoList.TodoList, null), _react2.default.createElement("input", { value: "" }), _react2.default.createElement("button", { onClick: this._handleClick }, "Add"));
+      return _react2.default.createElement("div", null, _react2.default.createElement(_TodoList.TodoList, null), _react2.default.createElement("input", { onChange: this._handleChange, value: "" }), _react2.default.createElement("button", { onClick: this._handleClick }, "Add"));
     }
   }]);
 
