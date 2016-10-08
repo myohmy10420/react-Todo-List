@@ -30,6 +30,7 @@ var TodoApp = exports.TodoApp = function (_Component) {
     var _this = _possibleConstructorReturn(this, (TodoApp.__proto__ || Object.getPrototypeOf(TodoApp)).call(this, props, context));
 
     _this.state = {
+      savetext: '',
       text: ''
     };
 
@@ -49,18 +50,21 @@ var TodoApp = exports.TodoApp = function (_Component) {
     value: function _handleChange(e) {
       console.log('onchanged:' + e.target.value);
       this.setState({
-        text: e.target.value
+        savetext: e.target.value
       });
     }
   }, {
     key: '_handleClick',
     value: function _handleClick() {
       console.log('here');
+      this.setState({
+        text: this.state.savetext
+      });
     }
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement("div", null, _react2.default.createElement(_TodoList.TodoList, { item: this.state.text }), _react2.default.createElement("input", { onChange: this._handleChange, value: this.state.text }), _react2.default.createElement("button", { onClick: this._handleClick }, "Add"));
+      return _react2.default.createElement("div", null, _react2.default.createElement(_TodoList.TodoList, { item: this.state.text }), _react2.default.createElement("input", { onChange: this._handleChange, value: this.state.savetext }), _react2.default.createElement("button", { onClick: this._handleClick }, "Add"));
     }
   }]);
 
