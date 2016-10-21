@@ -37,7 +37,9 @@ var TodoList = exports.TodoList = function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react2.default.createElement("div", null, _react2.default.createElement("p", null, this.props.item));
+      return _react2.default.createElement("ul", null, this.props.items.map(function (item) {
+        return _react2.default.createElement("li", { key: item.id }, item.text);
+      }));
     }
   }]);
 

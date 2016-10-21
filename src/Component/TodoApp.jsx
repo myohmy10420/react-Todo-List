@@ -6,9 +6,9 @@ export class TodoApp extends Component {
     super(props, context);
 
     this.state = {
-      savetext: '',
-      text:''
-    }
+      items: [],
+      text: ''
+    };
 
     this._handleClick = this._handleClick.bind(this);
     this._handleChange = this._handleChange.bind(this);
@@ -21,26 +21,31 @@ export class TodoApp extends Component {
   }
 
   _handleChange(e) {
-    console.log('onchanged:' + e.target.value)
-      this.setState({
-        savetext: e.target.value
-      })
-    }
-
-  _handleClick() {
-    console.log('here')
     this.setState({
-      text: this.state.savetext
-    })
+      text: e.target.value
+    });
   }
+
+  _handleClick(e) {
+    e.preventDefault();
+    var newItem = {
+      text: this.state.text,
+      id: Date.now()
+    };
+    this.setState((prevState) => ({
+      items: prevState.items.concat(newItem),
+      text: ''
+    }));
+  }
+  
 
 
   render() {
     return (
       <div>
-        <TodoList item={this.state.text} />
-        <input onChange={this._handleChange} value={this.state.savetext} />
-        <button onClick={this._handleClick}>Add</button>
+        <TodoList items={this.state.items} />
+        <input onChange={this._handleChange} value={this.state.text} />
+        <button onClick={this._handleClick}>{'Add #' + (this.state.items.length + 1)}</button>
       </div>
     );
   }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 export class TodoList extends Component {
-  constructor(props, context) {
-    super(props, context);
-  }
+      constructor(props, context) {
+      super(props, context);
+      
+    }
 
   componentWillUnmount () {
   }
@@ -13,10 +14,12 @@ export class TodoList extends Component {
 
   render () {
     return (
-      <div>
-        <p>{this.props.item}</p>
-      </div>
-    )
+      <ul>
+        {this.props.items.map(item => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+      </ul>
+    );
   }
 }
 
